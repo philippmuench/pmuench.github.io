@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Philpp C. Münch - Webpage</title>
 
-  <!-- CMU Serif for a LaTeX-like look -->
+  <!-- CMU Serif for headlines -->
   <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/gh/vmiklos/texlive-cm-unicode/web/cmun-serif.css"
@@ -18,84 +18,90 @@
 </head>
 <body>
 
-  <!-- LEFT COLUMN: MAIN CONTENT -->
-  <main class="main-content">
-    <!-- HEADER -->
-    <header>
-      <h1>Philpp C. Münch</h1>
-      <p class="subheader">
-        Research Associate, Harvard T.H. Chan School of Public Health • Staff Scientist, Helmholtz Centre for Infection Research
-      </p>
-      <hr class="light-rule">
-    </header>
+  <!-- FLEX CONTAINER -->
+  <div class="container">
+    
+    <!-- MAIN CONTENT (LEFT) -->
+    <main class="main-content">
+      <!-- HEADER -->
+      <header>
+        <h1>Philpp C. Münch</h1>
+        <p class="subheader">
+          Research Associate, Harvard T.H. Chan School of Public Health • Staff Scientist, Helmholtz Centre for Infection Research
+        </p>
+        <hr class="light-rule">
+      </header>
 
-    <!-- RESEARCH SECTION -->
-    <section id="work">
-      <h2>Research</h2>
-      <p>
-        My current work focuses on advancing deep learning for genomic applications. In collaboration with colleagues, I introduced <strong>Self-GenomeNet</strong> (a self-supervised approach that leverages reverse complement sequences), <strong>GenomeNet-Architect</strong> (an automated neural network optimization platform), and <strong>deepG</strong> (an R library to facilitate data handling and model selection in genomics). Recently, I’ve explored using large language models to expand phenotype annotations for microbial species—sometimes outperforming purely sequence-based strategies—while making these resources available via a shared portal for the research community.
-      </p>
-    </section>
+      <!-- RESEARCH SECTION -->
+      <section id="work">
+        <h2>Research</h2>
+        <p>
+          My current work focuses on advancing deep learning for genomic applications. In collaboration with colleagues, I introduced <strong>Self-GenomeNet</strong> (a self-supervised approach that leverages reverse complement sequences), <strong>GenomeNet-Architect</strong> (an automated neural network optimization platform), and <strong>deepG</strong> (an R library to facilitate data handling and model selection in genomics). Recently, I’ve explored using large language models to expand phenotype annotations for microbial species—sometimes outperforming purely sequence-based strategies—while making these resources available via a shared portal for the research community.
+        </p>
+      </section>
 
-    <!-- PERSONAL INTERESTS -->
-    <section id="overview">
-      <h2>Personal Interests</h2>
-      <p>
-        I live in Munich, Bavaria, where weekend hikes in the Alps are a welcome break from my work. I share my day-to-day life with a Bernese mountain dog, who keeps me moving and helps me appreciate the balance between research and the outdoors.
-      </p>
-      <p>
-        I enjoy reading <strong>Astral Codex Ten</strong> and occasionally browse <strong>LessWrong</strong> for new perspectives on science and related topics. I also like listening to <strong>Vivaldi</strong>, admiring <strong>Renoir’s Impressionist art</strong>.
-      </p>
-      <p>
-        If you’d like to discuss potential collaborations or just say hello, feel free to email me at 
-        <a href="mailto:muench@hsph.harvard.edu">muench@hsph.harvard.edu</a>. I’m always happy to connect with fellow researchers and enthusiasts.
-      </p>
-    </section>
+      <!-- PERSONAL INTERESTS -->
+      <section id="overview">
+        <h2>Personal Interests</h2>
+        <p>
+          I live in Munich, Bavaria, where weekend hikes in the Alps are a welcome break from my work. I share my day-to-day life with a Bernese mountain dog, who keeps me moving and helps me appreciate the balance between research and the outdoors.
+        </p>
+        <p>
+          I enjoy reading <strong>Astral Codex Ten</strong> and occasionally browse <strong>LessWrong</strong> for new perspectives on science and related topics. I also like listening to <strong>Vivaldi</strong>, admiring <strong>Renoir’s Impressionist art</strong>.
+        </p>
+        <p>
+          If you’d like to discuss potential collaborations or just say hello, feel free to email me at 
+          <a href="mailto:muench@hsph.harvard.edu">muench@hsph.harvard.edu</a>. I’m always happy to connect with fellow researchers and enthusiasts.
+        </p>
+      </section>
 
-    <!-- REFERENCES -->
-    <section id="references">
-      <h2>Selected publications</h2>
-      <ul class="references">
-        <li>Gündüz, H.A., Binder, M., To, X.Y., et al. (2023). 
-          <em>A self-supervised deep learning method for data-efficient training in genomics.</em> 
-          Commun Biol 6, 928. <a href="https://doi.org/10.1038/s42003-023-05310-2" target="_blank" rel="noopener">[doi]</a>
-        </li>
-        <li>Münch, P.C., Stecher, B., McHardy, A.C., et al. (2021). 
-          <em>Identification of Natural CRISPR Systems and Targets in the Human Microbiome.</em> 
-          Cell Host &amp; Microbe 29, 94–106.e4.
-        </li>
-        <li>Münch, P.C., Eberl, C., Woelfel, S., et al. (2023). 
-          <em>Pulsed antibiotic treatments of gnotobiotic mice manifest in complex bacterial community dynamics.</em> 
-          Cell Host &amp; Microbe 31, 1007–1020.e4.
-        </li>
-      </ul>
-      <p>
-        More details and a complete list: 
-        <a href="https://scholar.google.com" target="_blank" rel="noopener">Google Scholar</a>
-      </p>
-    </section>
+      <!-- REFERENCES -->
+      <section id="references">
+        <h2>Selected publications</h2>
+        <ul class="references">
+          <li>Gündüz, H.A., Binder, M., To, X.Y., et al. (2023). 
+            <em>A self-supervised deep learning method for data-efficient training in genomics.</em> 
+            Commun Biol 6, 928. <a href="https://doi.org/10.1038/s42003-023-05310-2" target="_blank" rel="noopener">[doi]</a>
+          </li>
+          <li>Münch, P.C., Stecher, B., McHardy, A.C., et al. (2021). 
+            <em>Identification of Natural CRISPR Systems and Targets in the Human Microbiome.</em> 
+            Cell Host &amp; Microbe 29, 94–106.e4.
+          </li>
+          <li>Münch, P.C., Eberl, C., Woelfel, S., et al. (2023). 
+            <em>Pulsed antibiotic treatments of gnotobiotic mice manifest in complex bacterial community dynamics.</em> 
+            Cell Host &amp; Microbe 31, 1007–1020.e4.
+          </li>
+        </ul>
+        <p>
+          More details and a complete list: 
+          <a href="https://scholar.google.com" target="_blank" rel="noopener">Google Scholar</a>
+        </p>
+      </section>
 
-    <footer>
-      <hr class="light-rule">
-      <p>© 2025 Philpp C. Münch</p>
-    </footer>
-  </main>
+      <footer>
+        <hr class="light-rule">
+        <p>© 2025 Philpp C. Münch</p>
+      </footer>
+    </main>
 
-  <!-- RIGHT COLUMN: BACKGROUND IMAGE & CAPTION -->
-  <aside class="painting-sidebar">
-    <div class="painting-caption">
-      <p>“Bal du moulin de la Galette”<br>(1876) by Pierre-Auguste Renoir — Public Domain</p>
-    </div>
-  </aside>
+    <!-- RIGHT COLUMN: BACKGROUND IMAGE & CAPTION -->
+    <aside class="painting-sidebar">
+      <div class="painting-caption">
+        <p>“Bal du moulin de la Galette”<br>(1876) by Pierre-Auguste Renoir — Public Domain</p>
+      </div>
+    </aside>
+  
+  </div> <!-- END .container -->
 
   <!-- Rough Notation Highlight Script -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
+      // Example usage for highlighting an element with ID "highlightAI"
       const highlightElem = document.getElementById("highlightAI");
       if (highlightElem) {
         const annotation = RoughNotation.annotate(highlightElem, {
           type: 'highlight',
-          color: '#C5CACC', // color from your snippet
+          color: '#C5CACC',
           strokeWidth: 6,
           animationDuration: 1000
         });
