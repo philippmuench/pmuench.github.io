@@ -8,31 +8,86 @@
 </head>
 <body>
   <main class="page">
-    <header class="intro">
-      <h1>Philipp C. Münch</h1>
-      <p class="role">
-        Research Associate, Harvard T.H. Chan School of Public Health<br>
-        Staff Scientist, Helmholtz Centre for Infection Research
-      </p>
-    </header>
+    <div class="hero">
+      <div class="hero-copy">
+        <header class="intro">
+          <h1>Philipp C. Münch</h1>
+          <p class="role">
+            <a href="https://huttenhower.sph.harvard.edu/home/" target="_blank" rel="noopener">Research Associate, Harvard T.H. Chan School of Public Health</a><br>
+            <a href="https://www.helmholtz-hzi.de/en/research/research-groups/details/computational-biology-for-infection-research/" target="_blank" rel="noopener">Staff Scientist, Helmholtz Centre for Infection Research</a>
+          </p>
+        </header>
 
-    <section aria-labelledby="research-heading">
-      <h2 id="research-heading">Research</h2>
-      <p>
-        My work focuses on machine learning methods for genomics, with an
-        emphasis on model development, automated architecture search, and
-        practical tools for microbial and genomic data.
-      </p>
-      <p>
-        Selected research outputs include Self-GenomeNet, GenomeNet-Architect,
-        deepG, and work on expanding phenotype annotations for microbial species
-        with language models.
-      </p>
-    </section>
+        <section class="about-section" aria-labelledby="about-heading">
+          <h2 id="about-heading">About</h2>
+          <p>
+            My work focuses on machine learning methods for genomics, with an
+            emphasis on deep learning method development, automated architecture
+            search, and practical tools for microbial and genomic data.
+          </p>
+          <p>
+            Outside research and software, I am interested in Baroque and classical
+            music, Expressionist art, and twentieth-century European literature.
+            I also enjoy hiking in the Alps, fly fishing, and spending time with
+            dogs.
+          </p>
+        </section>
+      </div>
 
-    <section aria-labelledby="publications-heading">
+      <figure class="intro-visual" aria-label="Alpine landscape illustration">
+        <img src="img.PNG" alt="Alpine landscape illustration with a hiker and dog">
+      </figure>
+    </div>
+
+    <div class="section-grid">
+      <section class="projects-section" aria-labelledby="projects-heading">
+        <h2 id="projects-heading">Projects</h2>
+        <p>
+          I am the main developer of these tools, spanning secure research
+          infrastructure, sequencing operations, and scientific writing support.
+        </p>
+        <div class="project-list">
+          <article class="project">
+            <h3><a href="https://firstauthor.ai/" target="_blank" rel="noopener">FirstAuthor.ai</a></h3>
+            <p>
+              Context-aware AI support for scientific publishing, helping
+              researchers revise manuscripts with cited references, domain
+              language, and verifiable suggestions.
+            </p>
+          </article>
+
+          <article class="project">
+            <h3><a href="https://labgate.dev/" target="_blank" rel="noopener">LabGate</a></h3>
+            <p>
+              Policy-controlled sandboxes for coding agents on HPC systems,
+              combining scoped filesystems, credential blocking, network policies,
+              and auditable execution.
+            </p>
+          </article>
+
+          <article class="project">
+            <h3><a href="https://seqdesk.com/" target="_blank" rel="noopener">SeqDesk</a></h3>
+            <p>
+              Open-source data capture and workflow coordination for sequencing
+              facilities, supporting sample submissions, bioinformatics pipelines,
+              and ENA publication.
+            </p>
+          </article>
+
+          <article class="project">
+            <h3><a href="https://huggingface.co/genomenet" target="_blank" rel="noopener">GenomeNet Spaces</a></h3>
+            <p>
+              Pretrained genomic models and interactive demos for protein
+              embeddings, metagenome embeddings, and CRISPR array detection.
+            </p>
+          </article>
+        </div>
+      </section>
+    </div>
+
+    <section class="publications-section" aria-labelledby="publications-heading">
       <h2 id="publications-heading">Notable Publications</h2>
-      <div class="project-list">
+      <div class="project-list publication-list">
         <article class="project publication">
           <h3><a href="https://www.biorxiv.org/content/10.64898/2026.02.11.705346v1.abstract" target="_blank" rel="noopener">Enhanced multi-omic viral profiling from microbial community sequencing with BAQLaVa</a></h3>
           <p>
@@ -100,107 +155,118 @@
       </p>
     </section>
 
-    <section class="projects-section" aria-labelledby="projects-heading">
-      <h2 id="projects-heading">Projects</h2>
-      <p>
-        I am the main developer of these tools, spanning secure research
-        infrastructure, sequencing operations, and scientific writing support.
-      </p>
-      <div class="project-list">
-        <article class="project">
-          <h3><a href="https://firstauthor.ai/" target="_blank" rel="noopener">FirstAuthor.ai</a></h3>
-          <p>
-            Context-aware AI support for scientific publishing, helping
-            researchers revise manuscripts with cited references, domain
-            language, and verifiable suggestions.
-          </p>
-        </article>
+    <section class="cv-section" aria-labelledby="cv-heading">
+      <h2 id="cv-heading">Selected CV</h2>
 
-        <article class="project">
-          <h3><a href="https://labgate.dev/" target="_blank" rel="noopener">LabGate</a></h3>
-          <p>
-            Policy-controlled sandboxes for coding agents on HPC systems,
-            combining scoped filesystems, credential blocking, network policies,
-            and auditable execution.
-          </p>
-        </article>
-
-        <article class="project">
-          <h3><a href="https://seqdesk.com/" target="_blank" rel="noopener">SeqDesk</a></h3>
-          <p>
-            Open-source data capture and workflow coordination for sequencing
-            facilities, supporting sample submissions, bioinformatics pipelines,
-            and ENA publication.
-          </p>
-        </article>
+      <div class="cv-group">
+        <h3>Academic Affiliations</h3>
+        <div class="cv-list">
+          <div class="cv-item">
+            <span class="cv-date">2023-Present</span>
+            <p><strong>Harvard T.H. Chan School of Public Health</strong><br>Research Associate</p>
+          </div>
+          <div class="cv-item">
+            <span class="cv-date">2023-Present</span>
+            <p><strong>Helmholtz Centre for Infection Research</strong><br>Staff Scientist</p>
+          </div>
+          <div class="cv-item">
+            <span class="cv-date">2015-2023</span>
+            <p><strong>Helmholtz Centre for Infection Research</strong><br>Graduate Research Associate</p>
+          </div>
+          <div class="cv-item">
+            <span class="cv-date">2017</span>
+            <p><strong>Harvard T.H. Chan School of Public Health</strong><br>Guest Researcher</p>
+          </div>
+          <div class="cv-item">
+            <span class="cv-date">2012-2014</span>
+            <p><strong>Heinrich Heine University Düsseldorf</strong><br>Research Associate</p>
+          </div>
+          <div class="cv-item">
+            <span class="cv-date">2012</span>
+            <p><strong>Max Planck Institute for Informatics</strong><br>Research Assistant</p>
+          </div>
+          <div class="cv-item">
+            <span class="cv-date">2011</span>
+            <p><strong>German Research Center for Environmental Health</strong><br>Research Unit of Molecular Epidemiology, Research Assistant</p>
+          </div>
+          <div class="cv-item">
+            <span class="cv-date">2010-2011</span>
+            <p><strong>Max Planck Institute for Informatics</strong><br>Computational Genomics and Epidemiology Group, Research Assistant</p>
+          </div>
+        </div>
       </div>
-    </section>
 
-    <section aria-labelledby="huggingface-heading">
-      <h2 id="huggingface-heading">Hugging Face</h2>
-      <p>
-        The <a href="https://huggingface.co/genomenet" target="_blank" rel="noopener">GenomeNet profile</a>
-        hosts pretrained models, datasets, and interactive Spaces for genomic
-        and protein sequence analysis.
-      </p>
-      <div class="project-list">
-        <article class="project">
-          <h3><a href="https://huggingface.co/spaces/genomenet/functional-distance" target="_blank" rel="noopener">Functional Distance</a></h3>
-          <p>
-            Interactive comparison of protein embeddings from ESM2 and Twin
-            Network models for functional similarity analysis.
-          </p>
-        </article>
-
-        <article class="project">
-          <h3><a href="https://huggingface.co/spaces/genomenet/bert-embedding" target="_blank" rel="noopener">BERT Metagenome Embeddings</a></h3>
-          <p>
-            Browser-based extraction of DNA sequence embeddings from a
-            pretrained metagenomic BERT model.
-          </p>
-        </article>
-
-        <article class="project">
-          <h3><a href="https://huggingface.co/spaces/genomenet/crispr-array-detection" target="_blank" rel="noopener">CRISPR Array Detection</a></h3>
-          <p>
-            Interactive detection of CRISPR arrays in DNA sequences using a
-            fine-tuned genomics model.
-          </p>
-        </article>
+      <div class="cv-group">
+        <h3>Education</h3>
+        <div class="cv-list">
+          <div class="cv-item">
+            <span class="cv-date">Apr 2015-Oct 2022</span>
+            <p><strong>Max von Pettenkofer-Institute, University of Munich</strong><br>Dr. rer. nat., Medical Faculty. Supervisor: Prof. Dr. Bärbel Stecher.</p>
+          </div>
+          <div class="cv-item">
+            <span class="cv-date">Oct 2012-Sep 2014</span>
+            <p><strong>University of Munich</strong><br>M.Sc. in Epidemiology</p>
+          </div>
+          <div class="cv-item">
+            <span class="cv-date">Oct 2008-Aug 2012</span>
+            <p><strong>University of Applied Sciences Weihenstephan</strong><br>B.Sc. in Bioinformatics</p>
+          </div>
+        </div>
       </div>
+
+      <div class="cv-group">
+        <h3>Editorial Boards</h3>
+        <div class="cv-list">
+          <div class="cv-item">
+            <span class="cv-date">May 2026-Present</span>
+            <p><strong>Immunity, Inflammation and Disease - Wiley</strong><br>Editor</p>
+          </div>
+          <div class="cv-item">
+            <span class="cv-date">2024-Present</span>
+            <p><strong>Current Protocols in Bioinformatics - Wiley</strong><br>Editor</p>
+          </div>
+          <div class="cv-item">
+            <span class="cv-date">2022-2024</span>
+            <p><strong>Current Protocols in Bioinformatics - Wiley</strong><br>Associate Editor</p>
+          </div>
+        </div>
+      </div>
+
     </section>
 
-    <section aria-labelledby="contact-heading">
-      <h2 id="contact-heading">Contact</h2>
-      <p>
-        For collaborations, research questions, or speaking requests, email
-        <a href="mailto:muench@hsph.harvard.edu">muench@hsph.harvard.edu</a>
-        or
-        <a href="mailto:philipp.muench@helmholtz-hzi.de">philipp.muench@helmholtz-hzi.de</a>.
-      </p>
-      <p>
-        <a href="/certs/">S/MIME certificate and SHA-256 fingerprint</a>
-      </p>
-    </section>
+    <div class="legal-grid">
+      <section class="contact-section" aria-labelledby="contact-heading">
+        <h2 id="contact-heading">Contact</h2>
+        <p>
+          For collaborations, research questions, or speaking requests, email
+          <a href="mailto:muench@hsph.harvard.edu">muench@hsph.harvard.edu</a>
+          or
+          <a href="mailto:philipp.muench@helmholtz-hzi.de">philipp.muench@helmholtz-hzi.de</a>.
+        </p>
+        <p>
+          <a href="/certs/">S/MIME certificate and SHA-256 fingerprint</a>
+        </p>
+      </section>
 
-    <section id="impressum" class="imprint" aria-labelledby="imprint-heading">
-      <h2 id="imprint-heading">Impressum</h2>
-      <p>Angaben gemäß § 5 DDG</p>
-      <address>
-        Dr. Philipp Münch - AI Software &amp; SaaS<br>
-        Inhaber: Dr. Philipp Münch<br>
-        c/o COCENTER<br>
-        Koppoldstr. 1<br>
-        86551 Aichach<br>
-        Deutschland
-      </address>
-      <p>
-        E-Mail: <a href="mailto:mail@pmuench.com">mail@pmuench.com</a>
-      </p>
-      <p>
-        USt-IdNr. gemäß § 27a UStG: DE460209447
-      </p>
-    </section>
+      <section id="impressum" class="imprint" aria-labelledby="imprint-heading">
+        <h2 id="imprint-heading">Impressum</h2>
+        <p>Angaben gemäß § 5 DDG</p>
+        <address>
+          Dr. Philipp Münch - AI Software &amp; SaaS<br>
+          Inhaber: Dr. Philipp Münch<br>
+          c/o COCENTER<br>
+          Koppoldstr. 1<br>
+          86551 Aichach<br>
+          Deutschland
+        </address>
+        <p>
+          E-Mail: <a href="mailto:mail@pmuench.com">mail@pmuench.com</a>
+        </p>
+        <p>
+          USt-IdNr. gemäß § 27a UStG: DE460209447
+        </p>
+      </section>
+    </div>
 
     <footer>
       <p>© 2026 Philipp C. Münch · <a href="#impressum">Impressum</a></p>
