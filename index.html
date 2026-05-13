@@ -21,9 +21,10 @@
         <section class="about-section" aria-labelledby="about-heading">
           <h2 id="about-heading">About</h2>
           <p>
-            My work focuses on machine learning methods for genomics, with an
-            emphasis on deep learning method development, automated architecture
-            search, and practical tools for microbial and genomic data.
+            My work and research interests focus on machine learning for genomics
+            and metaresearch, including deep learning method development, automated
+            architecture search, and practical tools that use DL and LLMs to make
+            research workflows more reproducible, scalable, and efficient.
           </p>
           <p>
             Outside research and software, I am interested in Baroque and classical
@@ -34,8 +35,8 @@
         </section>
       </div>
 
-      <figure class="intro-visual" aria-label="Alpine landscape illustration">
-        <img src="img.PNG" alt="Alpine landscape illustration with a hiker and dog">
+      <figure class="intro-visual" aria-label="Black-and-white alpine landscape illustration">
+        <img src="img2.PNG" alt="Black-and-white alpine landscape illustration with a hiker and dog">
       </figure>
     </div>
 
@@ -46,41 +47,114 @@
           I am the main developer of these tools, spanning secure research
           infrastructure, sequencing operations, and scientific writing support.
         </p>
-        <div class="project-list">
-          <article class="project">
-            <h3><a href="https://firstauthor.ai/" target="_blank" rel="noopener">FirstAuthor.ai</a></h3>
-            <p>
-              Context-aware AI support for scientific publishing, helping
-              researchers revise manuscripts with cited references, domain
-              language, and verifiable suggestions.
-            </p>
-          </article>
+        <div class="project-browser" data-project-browser>
+          <div class="project-list project-menu">
+            <button class="project project-menu-item" type="button" data-project-button="firstauthor" aria-controls="project-detail-firstauthor">
+              <img class="project-icon project-logo" src="icons/firstauthor.png" alt="" width="86" height="86" loading="lazy">
+              <span class="project-copy">
+                <span class="project-title" role="heading" aria-level="3"><span class="project-domain"><span>FirstAuthor</span><span class="project-tld">.ai</span></span></span>
+                <span class="project-teaser">
+                  Context-aware AI support for scientific publishing, helping
+                  researchers revise manuscripts with cited references, domain
+                  language, and verifiable suggestions.
+                </span>
+              </span>
+            </button>
 
-          <article class="project">
-            <h3><a href="https://labgate.dev/" target="_blank" rel="noopener">LabGate</a></h3>
-            <p>
-              Policy-controlled sandboxes for coding agents on HPC systems,
-              combining scoped filesystems, credential blocking, network policies,
-              and auditable execution.
-            </p>
-          </article>
+            <button class="project project-menu-item" type="button" data-project-button="labgate" aria-controls="project-detail-labgate">
+              <img class="project-icon project-logo" src="icons/labgate.png" alt="" width="86" height="86" loading="lazy">
+              <span class="project-copy">
+                <span class="project-title" role="heading" aria-level="3"><span class="project-domain"><span>labgate</span><span class="project-tld">.dev</span></span></span>
+                <span class="project-teaser">
+                  Policy-controlled sandboxes for coding agents on HPC systems,
+                  combining scoped filesystems, credential blocking, network policies,
+                  and auditable execution.
+                </span>
+              </span>
+            </button>
 
-          <article class="project">
-            <h3><a href="https://seqdesk.com/" target="_blank" rel="noopener">SeqDesk</a></h3>
-            <p>
-              Open-source data capture and workflow coordination for sequencing
-              facilities, supporting sample submissions, bioinformatics pipelines,
-              and ENA publication.
-            </p>
-          </article>
+            <button class="project project-menu-item" type="button" data-project-button="seqdesk" aria-controls="project-detail-seqdesk">
+              <img class="project-icon project-logo" src="icons/seqdesk.png" alt="" width="86" height="86" loading="lazy">
+              <span class="project-copy">
+                <span class="project-title" role="heading" aria-level="3"><span class="project-domain"><span>seqdesk</span><span class="project-tld">.com</span></span></span>
+                <span class="project-teaser">
+                  Open-source data capture and workflow coordination for sequencing
+                  facilities, supporting sample submissions, bioinformatics pipelines,
+                  and ENA publication.
+                </span>
+              </span>
+            </button>
 
-          <article class="project">
-            <h3><a href="https://huggingface.co/genomenet" target="_blank" rel="noopener">GenomeNet Spaces</a></h3>
-            <p>
-              Pretrained genomic models and interactive demos for protein
-              embeddings, metagenome embeddings, and CRISPR array detection.
-            </p>
-          </article>
+            <button class="project project-menu-item" type="button" data-project-button="genomenet" aria-controls="project-detail-genomenet">
+              <img class="project-icon project-logo" src="icons/genomenet.png" alt="" width="86" height="86" loading="lazy">
+              <span class="project-copy">
+                <span class="project-title" role="heading" aria-level="3">GenomeNet Spaces</span>
+                <span class="project-teaser">
+                  Pretrained genomic models and interactive demos for protein
+                  embeddings, metagenome embeddings, and CRISPR array detection.
+                </span>
+              </span>
+            </button>
+          </div>
+
+          <dialog class="project-modal" data-project-modal aria-label="Project details">
+            <button class="project-modal-close" type="button" data-project-close aria-label="Close project details"></button>
+            <article class="project-detail" id="project-detail-firstauthor" data-project-detail="firstauthor" hidden>
+              <h3><span class="project-domain"><span>FirstAuthor</span><span class="project-tld">.ai</span></span></h3>
+              <p>
+                A manuscript and research workspace combining writing, references,
+                measurements, collaboration, and AI review for scientific claims.
+              </p>
+              <ul class="project-points">
+                <li>Manuscripts, notes, measurements, and references in one workspace.</li>
+                <li>Reference search/import, citation management, and track changes.</li>
+                <li>Light and deep AI review modes for editing and scientific consistency.</li>
+              </ul>
+              <a class="project-link" href="https://firstauthor.ai/" target="_blank" rel="noopener">Visit firstauthor.ai</a>
+            </article>
+
+            <article class="project-detail" id="project-detail-labgate" data-project-detail="labgate" hidden>
+              <h3><span class="project-domain"><span>labgate</span><span class="project-tld">.dev</span></span></h3>
+              <p>
+                A security layer between AI coding agents and institutional
+                infrastructure, built for HPC clusters and research environments.
+              </p>
+              <ul class="project-points">
+                <li>Container isolation, file policies, credential blocking, and network controls.</li>
+                <li>Live dashboard with file-access logs, session audit trails, and replays.</li>
+                <li>SLURM integration, dataset registry, and results registry for agent workflows.</li>
+              </ul>
+              <a class="project-link" href="https://labgate.dev/" target="_blank" rel="noopener">Visit labgate.dev</a>
+            </article>
+
+            <article class="project-detail" id="project-detail-seqdesk" data-project-detail="seqdesk" hidden>
+              <h3><span class="project-domain"><span>seqdesk</span><span class="project-tld">.com</span></span></h3>
+              <p>
+                A self-hosted platform for sequencing facilities and research groups,
+                connecting structured sample intake with analysis and public archive submission.
+              </p>
+              <ul class="project-points">
+                <li>Researcher and facility-admin workflows for orders, samples, and studies.</li>
+                <li>ENA registration, submission workflows, and automatic accession tracking.</li>
+                <li>Reproducible pipelines from FASTQ to reports, running on SLURM or local systems.</li>
+              </ul>
+              <a class="project-link" href="https://seqdesk.com/" target="_blank" rel="noopener">Visit seqdesk.com</a>
+            </article>
+
+            <article class="project-detail" id="project-detail-genomenet" data-project-detail="genomenet" hidden>
+              <h3>GenomeNet Spaces</h3>
+              <p>
+                A collection of Hugging Face models, datasets, and spaces for
+                sequence representation learning and CRISPR analysis.
+              </p>
+              <ul class="project-points">
+                <li>Functional-distance demo comparing ESM2 and twin-network embeddings.</li>
+                <li>BERT-based metagenome embedding extraction.</li>
+                <li>CRISPR array detection and CRISPR-BERT token classification.</li>
+              </ul>
+              <a class="project-link" href="https://huggingface.co/genomenet" target="_blank" rel="noopener">Visit Hugging Face</a>
+            </article>
+          </dialog>
         </div>
       </section>
     </div>
@@ -272,5 +346,59 @@
       <p>© 2026 Philipp C. Münch · <a href="#impressum">Impressum</a></p>
     </footer>
   </main>
+  <script>
+    (() => {
+      const browser = document.querySelector("[data-project-browser]");
+      if (!browser) return;
+
+      const modal = browser.querySelector("[data-project-modal]");
+      const buttons = Array.from(browser.querySelectorAll("[data-project-button]"));
+      const details = Array.from(browser.querySelectorAll("[data-project-detail]"));
+      const closeButton = browser.querySelector("[data-project-close]");
+      if (!modal || !closeButton) return;
+
+      const clearSelection = () => {
+        details.forEach((detail) => {
+          detail.hidden = true;
+        });
+      };
+
+      const closeModal = () => {
+        if (typeof modal.close === "function" && modal.open) {
+          modal.close();
+          return;
+        }
+
+        modal.removeAttribute("open");
+        clearSelection();
+      };
+
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const target = button.dataset.projectButton;
+          const detail = browser.querySelector(`[data-project-detail="${target}"]`);
+
+          clearSelection();
+          if (!detail) return;
+
+          detail.hidden = false;
+
+          if (typeof modal.showModal === "function") {
+            modal.showModal();
+          } else {
+            modal.setAttribute("open", "");
+          }
+        });
+      });
+
+      closeButton.addEventListener("click", closeModal);
+      modal.addEventListener("close", clearSelection);
+      modal.addEventListener("click", (event) => {
+        if (event.target === modal) {
+          closeModal();
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
