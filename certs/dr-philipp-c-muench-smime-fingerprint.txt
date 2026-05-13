@@ -1,0 +1,6 @@
+subject=CN=Dr Philipp C. Münch, O=Helmholtz Centre for Infection Research, OU=Computational Biology for Infection Research, emailAddress=philipp.muench@helmholtz-hzi.de, C=DE
+issuer=CN=Dr Philipp C. Münch, O=Helmholtz Centre for Infection Research, OU=Computational Biology for Infection Research, emailAddress=philipp.muench@helmholtz-hzi.de, C=DE
+notBefore=May 15 11:42:51 2025 GMT
+notAfter=May 15 11:42:51 2030 GMT
+serial=-07B36C8E254AB7E39C4C
+sha256 Fingerprint=FD:23:5F:42:A4:19:B2:21:35:31:ED:28:37:34:50:B2:FF:9C:4E:59:D1:02:13:EF:B9:36:5A:95:30:68:93:94
