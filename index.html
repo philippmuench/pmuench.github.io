@@ -36,7 +36,7 @@
       </div>
 
       <figure class="intro-visual" aria-label="Black-and-white alpine landscape illustration">
-        <img src="img2.PNG" alt="Black-and-white alpine landscape illustration with a hiker and dog">
+        <img src="img2.webp" alt="Black-and-white alpine landscape illustration with a hiker and dog" width="840" height="1176">
       </figure>
     </div>
 
@@ -59,6 +59,7 @@
                   language, and verifiable suggestions.
                 </span>
               </span>
+              <span class="project-affordance" aria-hidden="true">Details</span>
             </button>
 
             <button class="project project-menu-item" type="button" data-project-button="labgate" aria-controls="project-detail-labgate">
@@ -71,6 +72,7 @@
                   and auditable execution.
                 </span>
               </span>
+              <span class="project-affordance" aria-hidden="true">Details</span>
             </button>
 
             <button class="project project-menu-item" type="button" data-project-button="seqdesk" aria-controls="project-detail-seqdesk">
@@ -83,6 +85,7 @@
                   and ENA publication.
                 </span>
               </span>
+              <span class="project-affordance" aria-hidden="true">Details</span>
             </button>
 
             <button class="project project-menu-item" type="button" data-project-button="genomenet" aria-controls="project-detail-genomenet">
@@ -94,13 +97,20 @@
                   embeddings, metagenome embeddings, and CRISPR array detection.
                 </span>
               </span>
+              <span class="project-affordance" aria-hidden="true">Details</span>
             </button>
           </div>
 
           <dialog class="project-modal" data-project-modal aria-label="Project details">
             <button class="project-modal-close" type="button" data-project-close aria-label="Close project details"></button>
             <article class="project-detail" id="project-detail-firstauthor" data-project-detail="firstauthor" hidden>
-              <h3><span class="project-domain"><span>FirstAuthor</span><span class="project-tld">.ai</span></span></h3>
+              <header class="project-detail-header">
+                <img class="project-detail-icon" src="icons/firstauthor.png" alt="" width="64" height="64" loading="lazy">
+                <div>
+                  <p class="project-kicker">Project details</p>
+                  <h3><span class="project-domain"><span>FirstAuthor</span><span class="project-tld">.ai</span></span></h3>
+                </div>
+              </header>
               <p>
                 A manuscript and research workspace combining writing, references,
                 measurements, collaboration, and AI review for scientific claims.
@@ -110,11 +120,17 @@
                 <li>Reference search/import, citation management, and track changes.</li>
                 <li>Light and deep AI review modes for editing and scientific consistency.</li>
               </ul>
-              <a class="project-link" href="https://firstauthor.ai/" target="_blank" rel="noopener">Visit firstauthor.ai</a>
+              <a class="project-link project-action" href="https://firstauthor.ai/" target="_blank" rel="noopener">Open firstauthor.ai</a>
             </article>
 
             <article class="project-detail" id="project-detail-labgate" data-project-detail="labgate" hidden>
-              <h3><span class="project-domain"><span>labgate</span><span class="project-tld">.dev</span></span></h3>
+              <header class="project-detail-header">
+                <img class="project-detail-icon" src="icons/labgate.png" alt="" width="64" height="64" loading="lazy">
+                <div>
+                  <p class="project-kicker">Project details</p>
+                  <h3><span class="project-domain"><span>labgate</span><span class="project-tld">.dev</span></span></h3>
+                </div>
+              </header>
               <p>
                 A security layer between AI coding agents and institutional
                 infrastructure, built for HPC clusters and research environments.
@@ -124,11 +140,17 @@
                 <li>Live dashboard with file-access logs, session audit trails, and replays.</li>
                 <li>SLURM integration, dataset registry, and results registry for agent workflows.</li>
               </ul>
-              <a class="project-link" href="https://labgate.dev/" target="_blank" rel="noopener">Visit labgate.dev</a>
+              <a class="project-link project-action" href="https://labgate.dev/" target="_blank" rel="noopener">Open labgate.dev</a>
             </article>
 
             <article class="project-detail" id="project-detail-seqdesk" data-project-detail="seqdesk" hidden>
-              <h3><span class="project-domain"><span>seqdesk</span><span class="project-tld">.com</span></span></h3>
+              <header class="project-detail-header">
+                <img class="project-detail-icon" src="icons/seqdesk.png" alt="" width="64" height="64" loading="lazy">
+                <div>
+                  <p class="project-kicker">Project details</p>
+                  <h3><span class="project-domain"><span>seqdesk</span><span class="project-tld">.com</span></span></h3>
+                </div>
+              </header>
               <p>
                 A self-hosted platform for sequencing facilities and research groups,
                 connecting structured sample intake with analysis and public archive submission.
@@ -138,11 +160,17 @@
                 <li>ENA registration, submission workflows, and automatic accession tracking.</li>
                 <li>Reproducible pipelines from FASTQ to reports, running on SLURM or local systems.</li>
               </ul>
-              <a class="project-link" href="https://seqdesk.com/" target="_blank" rel="noopener">Visit seqdesk.com</a>
+              <a class="project-link project-action" href="https://seqdesk.com/" target="_blank" rel="noopener">Open seqdesk.com</a>
             </article>
 
             <article class="project-detail" id="project-detail-genomenet" data-project-detail="genomenet" hidden>
-              <h3>GenomeNet Spaces</h3>
+              <header class="project-detail-header">
+                <img class="project-detail-icon" src="icons/genomenet.png" alt="" width="64" height="64" loading="lazy">
+                <div>
+                  <p class="project-kicker">Project details</p>
+                  <h3>GenomeNet Spaces</h3>
+                </div>
+              </header>
               <p>
                 A collection of Hugging Face models, datasets, and spaces for
                 sequence representation learning and CRISPR analysis.
@@ -152,7 +180,7 @@
                 <li>BERT-based metagenome embedding extraction.</li>
                 <li>CRISPR array detection and CRISPR-BERT token classification.</li>
               </ul>
-              <a class="project-link" href="https://huggingface.co/genomenet" target="_blank" rel="noopener">Visit Hugging Face</a>
+              <a class="project-link project-action" href="https://huggingface.co/genomenet" target="_blank" rel="noopener">Open Hugging Face</a>
             </article>
           </dialog>
         </div>
