@@ -1,432 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Philipp C. Münch</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Philipp Münch</title>
+<meta name="description" content="Philipp Münch: researcher, tool builder and music producer. Staff scientist at the Helmholtz Centre for Infection Research, research associate at the Harvard T.H. Chan School of Public Health.">
+<meta property="og:title" content="Philipp Münch">
+<meta property="og:description" content="I’m a researcher, I build tools, and I produce music.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://pmuench.com/">
+<style>
+@font-face{font-family:'Inter';font-style:normal;font-weight:400 700;font-display:swap;src:url(fonts/Inter-normal-400-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'Inter';font-style:normal;font-weight:400 700;font-display:swap;src:url(fonts/Inter-normal-400-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/JetBrainsMono-normal-400-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/JetBrainsMono-normal-400-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Source Serif 4';font-style:normal;font-weight:400 700;font-display:swap;src:url(fonts/SourceSerif4-normal-400-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'Source Serif 4';font-style:normal;font-weight:400 700;font-display:swap;src:url(fonts/SourceSerif4-normal-400-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Source Serif 4';font-style:italic;font-weight:400 700;font-display:swap;src:url(fonts/SourceSerif4-italic-400-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'Source Serif 4';font-style:italic;font-weight:400 700;font-display:swap;src:url(fonts/SourceSerif4-italic-400-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+/* Layout: one quiet column. Ink rules between rows, mono labels in the margin, a pencil drawing beside each line. */
+:root{
+  --bg:#EDEDEA; --paper:#FFFFFF; --ink:#121513; --muted:#555B57; --faint:#7C827D; --pencil:#2E312F;
+  --serif:"Source Serif 4",Georgia,serif; --ui:Inter,system-ui,-apple-system,"Segoe UI",sans-serif; --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  --rule:2px solid var(--ink);
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ --bg:#0E100F; --paper:#161917; --ink:#EDEDEA; --muted:#A9AEA9; --faint:#858B86; --pencil:#D9DCD8; color-scheme:dark } }
+:root[data-theme="dark"]{ --bg:#0E100F; --paper:#161917; --ink:#EDEDEA; --muted:#A9AEA9; --faint:#858B86; --pencil:#D9DCD8; color-scheme:dark }
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .dr{filter:invert(1) hue-rotate(180deg)} }
+:root[data-theme="dark"] .dr{filter:invert(1) hue-rotate(180deg)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.55 var(--ui);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none;border-bottom:2px solid var(--ink)}
+a:hover{background:var(--ink);color:var(--paper)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.wrap{max-width:960px;margin:0 auto;padding-block:clamp(16px,4vw,56px);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.sheet{background:var(--paper);border-top:var(--rule);padding:0 clamp(20px,5vw,64px)}
+.top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;padding:18px 0;font:400 13px/1.4 var(--mono);color:var(--muted)}
+.top nav{display:flex;flex-wrap:wrap;gap:6px 20px}
+.top a{border-bottom-width:1px}
+.hero{padding:clamp(36px,8vw,104px) 0 0}
+.hero h1{font:400 clamp(46px,9.4vw,104px)/.94 var(--serif);letter-spacing:-.035em;margin:0;text-wrap:balance}
+.hero p{font:400 clamp(20px,2.5vw,27px)/1.3 var(--serif);letter-spacing:-.008em;margin:clamp(18px,2.6vw,30px) 0 0;max-width:27em;color:var(--ink)}
+.art{margin:clamp(14px,3vw,36px) 0 0}
+.art img{display:block;width:100%;height:auto}
+.lead{position:relative}
+.dog{position:absolute;left:73.33%;top:5.56%;width:25.83%;height:auto}
+.dr{max-width:100%;height:auto}.dr.sm{display:block;width:100%}
+.hero p.cap{font:400 12px/1.4 var(--mono);letter-spacing:0;color:var(--faint);margin:6px 0 0;max-width:none;text-align:right}
+.list{margin:clamp(28px,5vw,60px) 0 0}
+.it{display:grid;grid-template-columns:8.5em minmax(0,1fr);gap:6px 28px;padding:clamp(16px,2.2vw,22px) 0;border-top:var(--rule)}
+.it:last-child{border-bottom:var(--rule)}
+.it .l{font:400 13px/1.9 var(--mono);color:var(--faint);align-self:start}
+.it > div{align-self:start}
+.it p{margin:0;font:400 clamp(18px,2vw,21px)/1.4 var(--serif);max-width:32em}
+.it .more{font:400 13px/1.5 var(--mono);color:var(--muted);margin-top:8px;display:flex;flex-wrap:wrap;gap:6px 18px}
+.it .more a{border-bottom-width:1px}
+.play{display:inline-flex;align-items:center;gap:12px;margin-top:14px;border:var(--rule);padding-right:14px}
+.play .ic{width:40px;height:40px;display:grid;place-items:center;background:var(--ink)}
+.play .ic svg{fill:var(--paper)}
+.play .tt{font:400 19px/1 var(--serif);font-style:italic}
+.play .ts{font:400 13px/1 var(--mono);color:var(--muted)}
+.yt{display:block;width:100%;max-width:520px;aspect-ratio:16/9;border:var(--rule);margin-top:14px}
+.legal{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 48px;border-top:var(--rule);padding:22px 0 26px;font:400 13px/1.6 var(--mono);color:var(--muted)}
+.legal h3{font:400 13px/1.6 var(--mono);color:var(--faint);margin:0 0 6px}
+.legal p,.legal address{margin:0 0 8px;font-style:normal}
+.legal a{border-bottom-width:1px}
+@media (max-width:600px){.legal{grid-template-columns:minmax(0,1fr)}}
+.play:hover .ic{background:var(--paper)}.play:hover .ic svg{fill:var(--ink)}.play:hover .ts{color:inherit}
+.hi{padding:clamp(40px,7vw,88px) 0 clamp(28px,5vw,56px)}
+.hi h2{font:400 clamp(36px,6vw,64px)/1 var(--serif);letter-spacing:-.03em;margin:0}
+.mail{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px;margin-top:18px}
+.mail a{border-bottom-width:2px;font:500 clamp(17px,3vw,30px)/1.1 var(--mono);letter-spacing:-.045em;overflow-wrap:anywhere;user-select:all}
+.mail button{font:400 13px/1 var(--mono);background:none;color:inherit;border:var(--rule);padding:9px 11px;cursor:pointer}
+.mail button:hover{background:var(--ink);color:var(--paper)}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 24px;border-top:var(--rule);padding:16px 0 22px;font:400 12px/1.4 var(--mono);color:var(--faint)}
+@media (max-width:600px){ .it{grid-template-columns:minmax(0,1fr)} .it .l{line-height:1.3} .dr.sm{width:150px} }
+</style>
 </head>
 <body>
-  <main class="page">
-    <div class="hero">
-      <div class="hero-copy">
-        <header class="intro">
-          <h1>Philipp C. Münch</h1>
-          <p class="role">
-            <a href="https://huttenhower.sph.harvard.edu/home/" target="_blank" rel="noopener">Research Associate, Harvard T.H. Chan School of Public Health</a><br>
-            <a href="https://www.helmholtz-hzi.de/en/research/research-groups/details/computational-biology-for-infection-research/" target="_blank" rel="noopener">Staff Scientist, Helmholtz Centre for Infection Research</a>
-          </p>
-        </header>
+<div class="wrap"><div class="sheet">
 
-        <section class="about-section" aria-labelledby="about-heading">
-          <h2 id="about-heading">About</h2>
-          <p>
-            My work and research interests focus on machine learning for genomics
-            and metaresearch, including deep learning method development, automated
-            architecture search, and practical tools that use DL and LLMs to make
-            research workflows more reproducible, scalable, and efficient.
-          </p>
-          <p>
-            Outside research and software, I am interested in Baroque and classical
-            music, Expressionist art, and twentieth-century European literature.
-            I also enjoy hiking in the Alps, fly fishing, and spending time with
-            dogs.
-          </p>
-        </section>
-      </div>
+<header class="top">
+  <span>philipp münch</span>
+  <nav aria-label="Elsewhere"><a href="https://scholar.google.com/citations?user=sJ_p3qwAAAAJ&hl=en">scholar</a><a href="https://www.youtube.com/@LooseLeash">youtube</a></nav>
+</header>
 
-      <figure class="intro-visual" aria-label="Black-and-white alpine landscape illustration">
-        <img src="img2.webp" alt="Black-and-white alpine landscape illustration with a hiker and dog" width="840" height="1176">
-      </figure>
-    </div>
+<section class="hero">
+  <h1>Hi, I’m Philipp.</h1>
+  <p>I’m a researcher, I build tools, and I produce music. I like dogs, Expressionist art and Baroque music.</p>
+  <div class="art"><div class="lead" role="img" aria-label="A Bernese mountain dog standing at the right, on a pencil-drawn leash that runs in loose loops across the page to a hand loop at the left."><img class="dr" src="leash.png" width="1890" height="567" alt=""><svg class="dog" viewBox="0 0 96 96" fill="none" stroke="#1B1C1E" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><clipPath id="c1"><path d="M29.8 47.8C28.2 49.4 30.7 54.5 30.8 57.8C30.9 61.2 30.5 64.8 30.5 67.8C30.5 70.7 30.6 74 30.7 75.4C30.8 76.8 31 75.9 30.9 76.1C30.8 76.4 30.6 76.4 30 76.8C29.5 77.3 27.8 78.3 27.6 78.9C27.4 79.4 28.1 80 28.7 80.2C29.3 80.4 30.4 80.2 31.4 80.2C32.4 80.2 33.8 80.6 34.5 80.2C35.2 79.8 35.4 78.8 35.5 78C35.7 77.2 35.3 77 35.3 75.4C35.3 73.8 35 71 35.5 68.2C36 65.4 37.6 61.9 38.4 58.6C39.2 55.2 41.6 50 40.2 48.2C38.8 46.4 31.4 46.2 29.8 47.8Z"/></clipPath><path d="M29.8 47.8C28.2 49.4 30.7 54.5 30.8 57.8C30.9 61.2 30.5 64.8 30.5 67.8C30.5 70.7 30.6 74 30.7 75.4C30.8 76.8 31 75.9 30.9 76.1C30.8 76.4 30.6 76.4 30 76.8C29.5 77.3 27.8 78.3 27.6 78.9C27.4 79.4 28.1 80 28.7 80.2C29.3 80.4 30.4 80.2 31.4 80.2C32.4 80.2 33.8 80.6 34.5 80.2C35.2 79.8 35.4 78.8 35.5 78C35.7 77.2 35.3 77 35.3 75.4C35.3 73.8 35 71 35.5 68.2C36 65.4 37.6 61.9 38.4 58.6C39.2 55.2 41.6 50 40.2 48.2C38.8 46.4 31.4 46.2 29.8 47.8Z" fill="#1E1F22" stroke="none"/><g clip-path="url(#c1)" stroke="none"><rect x="0" y="63" width="96" height="11.5" fill="#8A4C22"/><rect x="0" y="74.5" width="96" height="30" fill="#DCD6CC"/></g><path d="M30.8 57.8C30.8 59.5 30.5 64.8 30.5 67.8C30.5 70.7 30.6 74 30.7 75.4C30.8 76.8 31 75.9 30.9 76.1C30.8 76.4 30.6 76.4 30 76.8C29.5 77.3 27.8 78.3 27.6 78.9C27.4 79.4 28.1 80 28.7 80.2C29.3 80.4 30.4 80.2 31.4 80.2C32.4 80.2 33.8 80.6 34.5 80.2C35.2 79.8 35.4 78.8 35.5 78C35.7 77.2 35.3 77 35.3 75.4C35.3 73.8 35 71 35.5 68.2C36 65.4 37.9 60.2 38.4 58.6" stroke="#1B1C1E" stroke-width="0.6"/><clipPath id="c2"><path d="M66.1 48.9C63.8 49.2 61.1 56.2 62.1 59.3C63.2 62.5 70.8 65.3 72.3 67.9C73.8 70.5 71.3 73.7 71.1 75.1C71 76.4 71.5 75.8 71.3 76.1C71.2 76.4 70.8 76.4 70.2 76.8C69.6 77.3 67.8 78.3 67.6 78.9C67.4 79.4 68.1 80 68.8 80.2C69.4 80.4 70.6 80.2 71.7 80.2C72.7 80.2 74.2 80.6 74.9 80.2C75.6 79.8 75.8 78.8 75.9 78C76.1 77.3 75.5 77.7 75.7 75.7C75.8 73.7 77.7 69.2 76.9 66.1C76.2 63 71.2 58.5 71.1 57.1C70.9 55.6 76.7 58.5 75.9 57.1C75.1 55.8 68.4 48.5 66.1 48.9Z"/></clipPath><path d="M66.1 48.9C63.8 49.2 61.1 56.2 62.1 59.3C63.2 62.5 70.8 65.3 72.3 67.9C73.8 70.5 71.3 73.7 71.1 75.1C71 76.4 71.5 75.8 71.3 76.1C71.2 76.4 70.8 76.4 70.2 76.8C69.6 77.3 67.8 78.3 67.6 78.9C67.4 79.4 68.1 80 68.8 80.2C69.4 80.4 70.6 80.2 71.7 80.2C72.7 80.2 74.2 80.6 74.9 80.2C75.6 79.8 75.8 78.8 75.9 78C76.1 77.3 75.5 77.7 75.7 75.7C75.8 73.7 77.7 69.2 76.9 66.1C76.2 63 71.2 58.5 71.1 57.1C70.9 55.6 76.7 58.5 75.9 57.1C75.1 55.8 68.4 48.5 66.1 48.9Z" fill="#1E1F22" stroke="none"/><g clip-path="url(#c2)" stroke="none"><rect x="0" y="66" width="96" height="9" fill="#8A4C22"/><rect x="0" y="75" width="96" height="30" fill="#DCD6CC"/></g><path d="M62.1 59.3C63.8 60.8 70.8 65.3 72.3 67.9C73.8 70.5 71.3 73.7 71.1 75.1C71 76.4 71.5 75.8 71.3 76.1C71.2 76.4 70.8 76.4 70.2 76.8C69.6 77.3 67.8 78.3 67.6 78.9C67.4 79.4 68.1 80 68.8 80.2C69.4 80.4 70.6 80.2 71.7 80.2C72.7 80.2 74.2 80.6 74.9 80.2C75.6 79.8 75.8 78.8 75.9 78C76.1 77.3 75.5 77.7 75.7 75.7C75.8 73.7 77.7 69.2 76.9 66.1C76.2 63 72 58.6 71.1 57.1" stroke="#1B1C1E" stroke-width="0.6"/><clipPath id="ct"><path d="M73.5 38.5C79 36 86.5 38.5 89.6 45.5C92.4 52 91.4 60.5 86.6 66.4C85.6 67.6 84.2 67.4 84.4 65.8C85.2 59.5 83.4 53.4 79 49.6C76.4 47.4 73.6 46.6 71.8 46.4Z"/></clipPath><path d="M73.5 38.5C79 36 86.5 38.5 89.6 45.5C92.4 52 91.4 60.5 86.6 66.4C85.6 67.6 84.2 67.4 84.4 65.8C85.2 59.5 83.4 53.4 79 49.6C76.4 47.4 73.6 46.6 71.8 46.4Z" fill="#2B2C30" stroke="none"/><g clip-path="url(#ct)" stroke="none"><rect x="0" y="60.5" width="96" height="20" fill="#F6F3EE"/></g><path d="M73.5 38.5C79 36 86.5 38.5 89.6 45.5C92.4 52 91.4 60.5 86.6 66.4C85.6 67.6 84.2 67.4 84.4 65.8C85.2 59.5 83.4 53.4 79 49.6C76.4 47.4 73.6 46.6 71.8 46.4Z" stroke="#1B1C1E" stroke-width="0.8"/><clipPath id="cb"><path d="M4 31C4.2 30 4.6 28.5 5.6 27.4C6.6 26.3 8.4 25.4 10 24.6C11.6 23.8 13.2 23.1 15 22.6C16.8 22.1 19.2 21.3 21 21.4C22.8 21.5 24.6 21.9 26 23C27.4 24.1 28.2 26.2 29.4 28C30.6 29.8 31.6 32.6 33 34C34.4 35.4 35.5 36.1 38 36.4C40.5 36.7 44.7 36 48 36C51.3 36 55 36 58 36.2C61 36.4 63.6 36.5 66 37C68.4 37.5 70.9 38.3 72.6 39.4C74.3 40.5 75.6 41.6 76.4 43.4C77.2 45.2 77.7 47.7 77.6 50C77.5 52.3 76.7 55.3 75.6 57C74.5 58.7 72.9 60 71 60.4C69.1 60.8 66.8 59.4 64 59.6C61.2 59.8 57.7 61 54 61.4C50.3 61.8 45.7 62.3 42 62C38.3 61.7 34.7 60.9 32 59.6C29.3 58.3 27.2 56.3 25.6 54C24 51.7 23.8 48.6 22.6 46C21.4 43.4 19.9 40.2 18.4 38.4C16.9 36.6 15.1 35.8 13.4 35.2C11.7 34.6 9.5 34.9 8 34.6C6.5 34.3 5.3 34 4.6 33.4C3.9 32.8 3.8 32 4 31Z"/></clipPath><path d="M4 31C4.2 30 4.6 28.5 5.6 27.4C6.6 26.3 8.4 25.4 10 24.6C11.6 23.8 13.2 23.1 15 22.6C16.8 22.1 19.2 21.3 21 21.4C22.8 21.5 24.6 21.9 26 23C27.4 24.1 28.2 26.2 29.4 28C30.6 29.8 31.6 32.6 33 34C34.4 35.4 35.5 36.1 38 36.4C40.5 36.7 44.7 36 48 36C51.3 36 55 36 58 36.2C61 36.4 63.6 36.5 66 37C68.4 37.5 70.9 38.3 72.6 39.4C74.3 40.5 75.6 41.6 76.4 43.4C77.2 45.2 77.7 47.7 77.6 50C77.5 52.3 76.7 55.3 75.6 57C74.5 58.7 72.9 60 71 60.4C69.1 60.8 66.8 59.4 64 59.6C61.2 59.8 57.7 61 54 61.4C50.3 61.8 45.7 62.3 42 62C38.3 61.7 34.7 60.9 32 59.6C29.3 58.3 27.2 56.3 25.6 54C24 51.7 23.8 48.6 22.6 46C21.4 43.4 19.9 40.2 18.4 38.4C16.9 36.6 15.1 35.8 13.4 35.2C11.7 34.6 9.5 34.9 8 34.6C6.5 34.3 5.3 34 4.6 33.4C3.9 32.8 3.8 32 4 31Z" fill="#2B2C30" stroke="none"/><g clip-path="url(#cb)" stroke="none"><path d="M2 26.6L8.6 24.4L10.6 29.4L12 36.5L2 36.5Z" fill="#F6F3EE"/><path d="M5.6 27.4L9 22.4L12.2 20.4L11 24.4L9.2 27Z" fill="#F6F3EE"/><path d="M10.6 29.4C12.6 28 15.6 28.2 17.6 30.6L18.4 36.5L12 36.5Z" fill="#B4662E"/></g><path d="M22.4 45C22.4 46.7 23.9 49.9 25 52C26.1 54.1 28 57.3 29 57.6C30 57.9 31.2 55.8 31 54C30.8 52.2 29 49 28 47C27 45 25.9 42.3 25 42C24.1 41.7 22.4 43.3 22.4 45Z" fill="#F6F3EE" stroke="none"/><g clip-path="url(#cb)" stroke="none"><path d="M19 40.5C23.5 39.6 29.4 42 31.6 47.4C33 51.6 32.4 57 30.2 62L19 62Z" fill="#F6F3EE"/></g><path d="M34 60.4C34.3 61.1 38.7 61.8 42 62C45.3 62.2 51 61.8 54 61.4C57 61 59.3 60 60 59.4C60.7 58.8 60 57.8 58 57.6C56 57.4 51 58.1 48 58.2C45 58.3 42.3 57.6 40 58C37.7 58.4 33.7 59.7 34 60.4Z" fill="#1E1F22" stroke="none"/><path d="M4 31C4.2 30 4.6 28.5 5.6 27.4C6.6 26.3 8.4 25.4 10 24.6C11.6 23.8 13.2 23.1 15 22.6C16.8 22.1 19.2 21.3 21 21.4C22.8 21.5 24.6 21.9 26 23C27.4 24.1 28.2 26.2 29.4 28C30.6 29.8 31.6 32.6 33 34C34.4 35.4 35.5 36.1 38 36.4C40.5 36.7 44.7 36 48 36C51.3 36 55 36 58 36.2C61 36.4 63.6 36.5 66 37C68.4 37.5 70.9 38.3 72.6 39.4C74.3 40.5 75.6 41.6 76.4 43.4C77.2 45.2 77.7 47.7 77.6 50C77.5 52.3 76.7 55.3 75.6 57C74.5 58.7 72.9 60 71 60.4C69.1 60.8 66.8 59.4 64 59.6C61.2 59.8 57.7 61 54 61.4C50.3 61.8 45.7 62.3 42 62C38.3 61.7 34.7 60.9 32 59.6C29.3 58.3 27.2 56.3 25.6 54C24 51.7 23.8 48.6 22.6 46C21.4 43.4 19.9 40.2 18.4 38.4C16.9 36.6 15.1 35.8 13.4 35.2C11.7 34.6 9.5 34.9 8 34.6C6.5 34.3 5.3 34 4.6 33.4C3.9 32.8 3.8 32 4 31Z" stroke="#1B1C1E" stroke-width="0.9"/><clipPath id="c3"><path d="M64 48.6C61.6 48.7 56.8 55.9 57.5 59.1C58.1 62.3 66.2 65.2 67.7 67.9C69.1 70.5 66.4 73.6 66.1 75C65.9 76.3 66.5 75.8 66.3 76.1C66.2 76.4 65.8 76.4 65.2 76.8C64.6 77.3 62.8 78.3 62.6 78.9C62.4 79.4 63.1 80 63.8 80.2C64.4 80.4 65.6 80.2 66.7 80.2C67.7 80.2 69.2 80.6 69.9 80.2C70.6 79.8 70.8 78.8 70.9 78C71.1 77.3 70.4 77.8 70.7 75.8C70.9 73.8 73 69.1 72.3 66.1C71.7 63.1 66.6 59 66.5 57.7C66.5 56.5 72.4 60.1 72 58.6C71.6 57.1 66.4 48.5 64 48.6Z"/></clipPath><path d="M64 48.6C61.6 48.7 56.8 55.9 57.5 59.1C58.1 62.3 66.2 65.2 67.7 67.9C69.1 70.5 66.4 73.6 66.1 75C65.9 76.3 66.5 75.8 66.3 76.1C66.2 76.4 65.8 76.4 65.2 76.8C64.6 77.3 62.8 78.3 62.6 78.9C62.4 79.4 63.1 80 63.8 80.2C64.4 80.4 65.6 80.2 66.7 80.2C67.7 80.2 69.2 80.6 69.9 80.2C70.6 79.8 70.8 78.8 70.9 78C71.1 77.3 70.4 77.8 70.7 75.8C70.9 73.8 73 69.1 72.3 66.1C71.7 63.1 66.6 59 66.5 57.7C66.5 56.5 72.4 60.1 72 58.6C71.6 57.1 66.4 48.5 64 48.6Z" fill="#2B2C30" stroke="none"/><g clip-path="url(#c3)" stroke="none"><rect x="0" y="64.5" width="96" height="10.0" fill="#B4662E"/><rect x="0" y="74.5" width="96" height="30" fill="#F6F3EE"/></g><path d="M57.5 59.1C59.2 60.5 66.2 65.2 67.7 67.9C69.1 70.5 66.4 73.6 66.1 75C65.9 76.3 66.5 75.8 66.3 76.1C66.2 76.4 65.8 76.4 65.2 76.8C64.6 77.3 62.8 78.3 62.6 78.9C62.4 79.4 63.1 80 63.8 80.2C64.4 80.4 65.6 80.2 66.7 80.2C67.7 80.2 69.2 80.6 69.9 80.2C70.6 79.8 70.8 78.8 70.9 78C71.1 77.3 70.4 77.8 70.7 75.8C70.9 73.8 73 69.1 72.3 66.1C71.7 63.1 67.5 59.1 66.5 57.7" stroke="#1B1C1E" stroke-width="0.8"/><path d="M60.6 46.6C60.2 47.5 58.6 50.1 58.4 52C58.2 53.9 59.4 57 59.6 58" stroke="#4A4B50" stroke-width="0.6"/><clipPath id="c4"><path d="M24.8 45.8C23.2 47.8 25.8 54.1 25.8 57.8C25.9 61.4 25.2 64.8 25.1 67.7C25 70.6 25.1 73.9 25.1 75.3C25.1 76.7 25.4 75.9 25.3 76.1C25.2 76.4 25 76.4 24.4 76.8C23.9 77.3 22.2 78.3 22 78.9C21.8 79.4 22.4 80 23.1 80.2C23.7 80.4 24.8 80.2 25.8 80.2C26.8 80.2 28.2 80.6 28.9 80.2C29.6 79.8 29.8 78.8 29.9 78C30.1 77.3 29.7 77.1 29.7 75.5C29.7 73.8 29.5 71.1 30.1 68.3C30.7 65.5 32.5 62.3 33.4 58.6C34.2 54.9 36.6 48.3 35.2 46.2C33.8 44 26.4 43.9 24.8 45.8Z"/></clipPath><path d="M24.8 45.8C23.2 47.8 25.8 54.1 25.8 57.8C25.9 61.4 25.2 64.8 25.1 67.7C25 70.6 25.1 73.9 25.1 75.3C25.1 76.7 25.4 75.9 25.3 76.1C25.2 76.4 25 76.4 24.4 76.8C23.9 77.3 22.2 78.3 22 78.9C21.8 79.4 22.4 80 23.1 80.2C23.7 80.4 24.8 80.2 25.8 80.2C26.8 80.2 28.2 80.6 28.9 80.2C29.6 79.8 29.8 78.8 29.9 78C30.1 77.3 29.7 77.1 29.7 75.5C29.7 73.8 29.5 71.1 30.1 68.3C30.7 65.5 32.5 62.3 33.4 58.6C34.2 54.9 36.6 48.3 35.2 46.2C33.8 44 26.4 43.9 24.8 45.8Z" fill="#2B2C30" stroke="none"/><g clip-path="url(#c4)" stroke="none"><rect x="0" y="61" width="96" height="13" fill="#B4662E"/><rect x="0" y="74" width="96" height="30" fill="#F6F3EE"/></g><path d="M25.8 57.8C25.7 59.4 25.2 64.8 25.1 67.7C25 70.6 25.1 73.9 25.1 75.3C25.1 76.7 25.4 75.9 25.3 76.1C25.2 76.4 25 76.4 24.4 76.8C23.9 77.3 22.2 78.3 22 78.9C21.8 79.4 22.4 80 23.1 80.2C23.7 80.4 24.8 80.2 25.8 80.2C26.8 80.2 28.2 80.6 28.9 80.2C29.6 79.8 29.8 78.8 29.9 78C30.1 77.3 29.7 77.1 29.7 75.5C29.7 73.8 29.5 71.1 30.1 68.3C30.7 65.5 32.8 60.2 33.4 58.6" stroke="#1B1C1E" stroke-width="0.8"/><path d="M17.6 23.4C18.6 22.1 21.7 22.8 23 24C24.3 25.2 25.2 28.3 25.6 30.6C26 32.9 25.9 36.2 25.4 38C24.9 39.8 23.5 41.3 22.4 41.6C21.3 41.9 19.5 41.3 18.6 39.6C17.7 37.9 17.2 34.3 17 31.6C16.8 28.9 16.6 24.7 17.6 23.4Z" fill="#232427" stroke="#0E0F10" stroke-width="0.8"/><path d="M8 34.6C8.7 34.4 10.7 33.5 12.4 33.2C14.1 32.9 17.1 32.9 18 32.8" stroke="#5A3A22" stroke-width="0.45"/><circle cx="13.3" cy="24.5" r="1" fill="#B4662E" stroke="none"/><circle cx="12.4" cy="27.2" r="1.7" fill="#6A4424" stroke="none"/><circle cx="12.4" cy="27.2" r="1" fill="#0E0F10" stroke="none"/><circle cx="11.8" cy="26.6" r="0.5" fill="#FFFFFF" stroke="none"/><ellipse cx="4.6" cy="30.6" rx="1.8" ry="1.5" fill="#1B1C1E" stroke="#0E0F10" stroke-width="0.5"/><path d="M5.4 33.4C8 34.6 10.6 34.4 12.2 33.6" stroke="#5A3A22" stroke-width="0.5"/><circle cx="31" cy="36.3" r="1.5" fill="#F6F3EE" stroke="#1B1C1E" stroke-width="0.7"/></svg></div></div>
+</section>
 
-    <div class="section-grid">
-      <section class="projects-section" aria-labelledby="projects-heading">
-        <h2 id="projects-heading">Projects</h2>
-        <p>
-          I am the main developer of these tools, spanning secure research
-          infrastructure, sequencing operations, and scientific writing support.
-        </p>
-        <div class="project-browser" data-project-browser>
-          <div class="project-list project-menu">
-            <button class="project project-menu-item" type="button" data-project-button="firstauthor" aria-controls="project-detail-firstauthor">
-              <img class="project-icon project-logo" src="icons/firstauthor.png" alt="" width="86" height="86" loading="lazy">
-              <span class="project-copy">
-                <span class="project-title" role="heading" aria-level="3"><span class="project-domain"><span>FirstAuthor</span><span class="project-tld">.ai</span></span></span>
-                <span class="project-teaser">
-                  Context-aware AI support for scientific publishing, helping
-                  researchers revise manuscripts with cited references, domain
-                  language, and verifiable suggestions.
-                </span>
-              </span>
-              <span class="project-affordance" aria-hidden="true">Details</span>
-            </button>
+<section class="list" aria-label="A few things about me">
+  <div class="it"><span class="l">research</span><div><p>I’m a staff scientist at the Helmholtz Centre for Infection Research and a research associate at the Harvard T.H. Chan School of Public Health. My team works on agentic AI in computational biology.</p><div class="more"><a href="https://scholar.google.com/citations?user=sJ_p3qwAAAAJ&hl=en">Google Scholar ↗</a><a href="https://www.helmholtz-hzi.de/en/research/research-groups/details/computational-biology-for-infection-research/#further-groups">the team ↗</a></div></div></div>
+  <div class="it"><span class="l">tools</span><div><p>I develop tools, mostly for science: SeqDesk for sequencing labs, Drawings for scientific figures, FirstAuthor for writing papers, and labgate for coding agents on HPC systems.</p><div class="more"><a href="https://seqdesk.com">seqdesk.com ↗</a><a href="https://ongoingscience.com/drawings">drawings ↗</a><a href="https://firstauthor.ai">firstauthor.ai ↗</a><a href="https://labgate.dev">labgate.dev ↗</a></div></div></div>
+  <div class="it"><span class="l">music</span><div><p>I produce music as Loose Leash, with tools I developed for it.</p><a class="play" href="https://www.youtube.com/watch?v=AvLviFXrZVs" aria-label="Play halfsun by Loose Leash on YouTube"><span class="ic" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16"><path d="M4 2.5v11l9.5-5.5z"/></svg></span><span class="tt">halfsun</span><span class="ts">play</span></a><div class="more"><a href="https://www.youtube.com/@LooseLeash">youtube.com/@LooseLeash ↗</a></div></div></div>
+  <div class="it"><span class="l">likes</span><div><p>Baroque and classical music, Expressionist art and twentieth-century European literature. Hiking in the Alps, fly fishing, and time with dogs. Reading Gwern and Astral Codex Ten.</p><div class="more"><a href="https://gwern.net">gwern.net ↗</a><a href="https://www.astralcodexten.com">astralcodexten.com ↗</a></div></div></div>
+</section>
 
-            <button class="project project-menu-item" type="button" data-project-button="labgate" aria-controls="project-detail-labgate">
-              <img class="project-icon project-logo" src="icons/labgate.png" alt="" width="86" height="86" loading="lazy">
-              <span class="project-copy">
-                <span class="project-title" role="heading" aria-level="3"><span class="project-domain"><span>labgate</span><span class="project-tld">.dev</span></span></span>
-                <span class="project-teaser">
-                  Policy-controlled sandboxes for coding agents on HPC systems,
-                  combining scoped filesystems, credential blocking, network policies,
-                  and auditable execution.
-                </span>
-              </span>
-              <span class="project-affordance" aria-hidden="true">Details</span>
-            </button>
+<section class="hi" id="hi">
+  <h2>Say hi.</h2>
+  <div class="mail"><a id="addr" href="mailto:mail@pmuench.com">mail@pmuench.com</a><button type="button" id="copy">copy</button></div>
+</section>
 
-            <button class="project project-menu-item" type="button" data-project-button="seqdesk" aria-controls="project-detail-seqdesk">
-              <img class="project-icon project-logo" src="icons/seqdesk.png" alt="" width="86" height="86" loading="lazy">
-              <span class="project-copy">
-                <span class="project-title" role="heading" aria-level="3"><span class="project-domain"><span>seqdesk</span><span class="project-tld">.com</span></span></span>
-                <span class="project-teaser">
-                  Open-source data capture and workflow coordination for sequencing
-                  facilities, supporting sample submissions, bioinformatics pipelines,
-                  and ENA publication.
-                </span>
-              </span>
-              <span class="project-affordance" aria-hidden="true">Details</span>
-            </button>
+<section class="legal" id="impressum" aria-label="Contact and legal notice">
+  <div><h3>Contact</h3><p>For collaborations, research questions, or speaking requests, email <a href="mailto:mail@pmuench.com">mail@pmuench.com</a>.</p><p><a href="/certs/">S/MIME certificate and SHA-256 fingerprint</a></p></div>
+  <div lang="de"><h3>Impressum</h3><p>Angaben gemäß § 5 DDG</p><address>Dr. Philipp Münch - AI Software &amp; SaaS<br>Inhaber: Dr. Philipp Münch<br>c/o COCENTER<br>Koppoldstr. 1<br>86551 Aichach<br>Deutschland</address><p>E-Mail: <a href="mailto:mail@pmuench.com">mail@pmuench.com</a></p><p>USt-IdNr. gemäß § 27a UStG: DE460209447</p></div>
+</section>
+<footer class="foot"><span>Philipp Münch</span><span>pmuench.com</span></footer>
 
-            <button class="project project-menu-item" type="button" data-project-button="genomenet" aria-controls="project-detail-genomenet">
-              <img class="project-icon project-logo" src="icons/genomenet.png" alt="" width="86" height="86" loading="lazy">
-              <span class="project-copy">
-                <span class="project-title" role="heading" aria-level="3">GenomeNet Spaces</span>
-                <span class="project-teaser">
-                  Pretrained genomic models and interactive demos for protein
-                  embeddings, metagenome embeddings, and CRISPR array detection.
-                </span>
-              </span>
-              <span class="project-affordance" aria-hidden="true">Details</span>
-            </button>
-          </div>
+</div></div>
 
-          <dialog class="project-modal" data-project-modal aria-label="Project details">
-            <button class="project-modal-close" type="button" data-project-close aria-label="Close project details"></button>
-            <article class="project-detail" id="project-detail-firstauthor" data-project-detail="firstauthor" hidden>
-              <header class="project-detail-header">
-                <img class="project-detail-icon" src="icons/firstauthor.png" alt="" width="64" height="64" loading="lazy">
-                <div>
-                  <p class="project-kicker">Project details</p>
-                  <h3><span class="project-domain"><span>FirstAuthor</span><span class="project-tld">.ai</span></span></h3>
-                </div>
-              </header>
-              <p>
-                A manuscript and research workspace combining writing, references,
-                measurements, collaboration, and AI review for scientific claims.
-              </p>
-              <ul class="project-points">
-                <li>Manuscripts, notes, measurements, and references in one workspace.</li>
-                <li>Reference search/import, citation management, and track changes.</li>
-                <li>Light and deep AI review modes for editing and scientific consistency.</li>
-              </ul>
-              <a class="project-link project-action" href="https://firstauthor.ai/" target="_blank" rel="noopener">Open firstauthor.ai</a>
-            </article>
-
-            <article class="project-detail" id="project-detail-labgate" data-project-detail="labgate" hidden>
-              <header class="project-detail-header">
-                <img class="project-detail-icon" src="icons/labgate.png" alt="" width="64" height="64" loading="lazy">
-                <div>
-                  <p class="project-kicker">Project details</p>
-                  <h3><span class="project-domain"><span>labgate</span><span class="project-tld">.dev</span></span></h3>
-                </div>
-              </header>
-              <p>
-                A security layer between AI coding agents and institutional
-                infrastructure, built for HPC clusters and research environments.
-              </p>
-              <ul class="project-points">
-                <li>Container isolation, file policies, credential blocking, and network controls.</li>
-                <li>Live dashboard with file-access logs, session audit trails, and replays.</li>
-                <li>SLURM integration, dataset registry, and results registry for agent workflows.</li>
-              </ul>
-              <a class="project-link project-action" href="https://labgate.dev/" target="_blank" rel="noopener">Open labgate.dev</a>
-            </article>
-
-            <article class="project-detail" id="project-detail-seqdesk" data-project-detail="seqdesk" hidden>
-              <header class="project-detail-header">
-                <img class="project-detail-icon" src="icons/seqdesk.png" alt="" width="64" height="64" loading="lazy">
-                <div>
-                  <p class="project-kicker">Project details</p>
-                  <h3><span class="project-domain"><span>seqdesk</span><span class="project-tld">.com</span></span></h3>
-                </div>
-              </header>
-              <p>
-                A self-hosted platform for sequencing facilities and research groups,
-                connecting structured sample intake with analysis and public archive submission.
-              </p>
-              <ul class="project-points">
-                <li>Researcher and facility-admin workflows for orders, samples, and studies.</li>
-                <li>ENA registration, submission workflows, and automatic accession tracking.</li>
-                <li>Reproducible pipelines from FASTQ to reports, running on SLURM or local systems.</li>
-              </ul>
-              <a class="project-link project-action" href="https://seqdesk.com/" target="_blank" rel="noopener">Open seqdesk.com</a>
-            </article>
-
-            <article class="project-detail" id="project-detail-genomenet" data-project-detail="genomenet" hidden>
-              <header class="project-detail-header">
-                <img class="project-detail-icon" src="icons/genomenet.png" alt="" width="64" height="64" loading="lazy">
-                <div>
-                  <p class="project-kicker">Project details</p>
-                  <h3>GenomeNet Spaces</h3>
-                </div>
-              </header>
-              <p>
-                A collection of Hugging Face models, datasets, and spaces for
-                sequence representation learning and CRISPR analysis.
-              </p>
-              <ul class="project-points">
-                <li>Functional-distance demo comparing ESM2 and twin-network embeddings.</li>
-                <li>BERT-based metagenome embedding extraction.</li>
-                <li>CRISPR array detection and CRISPR-BERT token classification.</li>
-              </ul>
-              <a class="project-link project-action" href="https://huggingface.co/genomenet" target="_blank" rel="noopener">Open Hugging Face</a>
-            </article>
-          </dialog>
-        </div>
-      </section>
-    </div>
-
-    <section class="publications-section" aria-labelledby="publications-heading">
-      <h2 id="publications-heading">Notable Publications</h2>
-      <div class="project-list publication-list">
-        <article class="project publication">
-          <h3><a href="https://www.biorxiv.org/content/10.64898/2026.02.11.705346v1.abstract" target="_blank" rel="noopener">Enhanced multi-omic viral profiling from microbial community sequencing with BAQLaVa</a></h3>
-          <p>
-            <span class="publication-meta">bioRxiv preprint, 2026.</span>
-            Presents BAQLaVa for high-resolution viral profiling from
-            metagenomic and metatranscriptomic data. The framework supports
-            scalable virome epidemiology and virus-host interaction analysis.
-          </p>
-        </article>
-
-        <article class="project publication">
-          <h3><a href="https://www.biorxiv.org/content/10.1101/2025.11.24.690272v1.abstract" target="_blank" rel="noopener">Comparative assessment of large language models for microbial phenotype annotation</a></h3>
-          <p>
-            <span class="publication-meta">bioRxiv preprint, 2025.</span>
-            Evaluates how well large language models support structured
-            microbial phenotype annotation. The study compares model behavior
-            across traits and uses confidence to prioritize reliable outputs.
-          </p>
-        </article>
-
-        <article class="project publication">
-          <h3><a href="https://www.nature.com/articles/s42003-024-06161-1" target="_blank" rel="noopener">Optimized model architectures for deep learning on genomic data</a></h3>
-          <p>
-            <span class="publication-meta">Communications Biology, 2024.</span>
-            Presents GenomeNet-Architect, a framework for automated neural
-            architecture optimization on genomic sequence tasks. The approach
-            searches model layouts and training hyperparameters for compact,
-            efficient genomic classifiers.
-          </p>
-        </article>
-
-        <article class="project publication">
-          <h3><a href="https://www.cell.com/cell-host-microbe/fulltext/S1931-3128(23)00206-8?uuid=uuid%3Ad55d882d-27a9-4e3c-85c5-fe3a95079cf5" target="_blank" rel="noopener">Pulsed antibiotic treatments of gnotobiotic mice manifest in complex bacterial community dynamics and resistance effects</a></h3>
-          <p>
-            <span class="publication-meta">Cell Host &amp; Microbe, 2023.</span>
-            Studies strain-level microbiome responses to repeated antibiotic
-            perturbations in gnotobiotic mice. The paper highlights how
-            treatment pulses can reshape community dynamics and resistance.
-          </p>
-        </article>
-
-        <article class="project publication">
-          <h3><a href="https://www.nature.com/articles/s42003-023-05310-2" target="_blank" rel="noopener">A self-supervised deep learning method for data-efficient training in genomics</a></h3>
-          <p>
-            <span class="publication-meta">Communications Biology, 2023.</span>
-            Introduces Self-GenomeNet, a self-supervised approach tailored to
-            genomic sequences. The method uses reverse-complement structure to
-            improve learning in data-scarce genomic prediction tasks.
-          </p>
-        </article>
-
-        <article class="project publication">
-          <h3><a href="https://www.cell.com/cell-host-microbe/fulltext/S1931-3128(20)30573-4?uuid=uuid%3A3fb65e7a-e99d-44a3-b809-78e81e846fe5" target="_blank" rel="noopener">Identification of natural CRISPR systems and targets in the human microbiome</a></h3>
-          <p>
-            <span class="publication-meta">Cell Host &amp; Microbe, 2021.</span>
-            Maps natural CRISPR-Cas systems across human microbiome
-            metagenomes. The work links CRISPR spacers, cas genes, body sites,
-            taxa, and putative viral or mobile-element targets.
-          </p>
-        </article>
-      </div>
-      <p class="section-note">
-        For a complete list, see my
-        <a href="https://scholar.google.com/citations?user=sJ_p3qwAAAAJ&amp;hl=de" target="_blank" rel="noopener">Google Scholar profile</a>.
-      </p>
-    </section>
-
-    <section class="cv-section" aria-labelledby="cv-heading">
-      <h2 id="cv-heading">Selected CV</h2>
-
-      <div class="cv-group">
-        <h3>Academic Affiliations</h3>
-        <div class="cv-list">
-          <div class="cv-item">
-            <span class="cv-date">2023-Present</span>
-            <p><strong>Harvard T.H. Chan School of Public Health</strong><br>Research Associate</p>
-          </div>
-          <div class="cv-item">
-            <span class="cv-date">2023-Present</span>
-            <p><strong>Helmholtz Centre for Infection Research</strong><br>Staff Scientist</p>
-          </div>
-          <div class="cv-item">
-            <span class="cv-date">2015-2023</span>
-            <p><strong>Helmholtz Centre for Infection Research</strong><br>Graduate Research Associate</p>
-          </div>
-          <div class="cv-item">
-            <span class="cv-date">2017</span>
-            <p><strong>Harvard T.H. Chan School of Public Health</strong><br>Guest Researcher</p>
-          </div>
-          <div class="cv-item">
-            <span class="cv-date">2012-2014</span>
-            <p><strong>Heinrich Heine University Düsseldorf</strong><br>Research Associate</p>
-          </div>
-          <div class="cv-item">
-            <span class="cv-date">2012</span>
-            <p><strong>Max Planck Institute for Informatics</strong><br>Research Assistant</p>
-          </div>
-          <div class="cv-item">
-            <span class="cv-date">2011</span>
-            <p><strong>German Research Center for Environmental Health</strong><br>Research Unit of Molecular Epidemiology, Research Assistant</p>
-          </div>
-          <div class="cv-item">
-            <span class="cv-date">2010-2011</span>
-            <p><strong>Max Planck Institute for Informatics</strong><br>Computational Genomics and Epidemiology Group, Research Assistant</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="cv-group">
-        <h3>Education</h3>
-        <div class="cv-list">
-          <div class="cv-item">
-            <span class="cv-date">Apr 2015-Oct 2022</span>
-            <p><strong>Max von Pettenkofer-Institute, University of Munich</strong><br>Dr. rer. nat., Medical Faculty. Supervisor: Prof. Dr. Bärbel Stecher.</p>
-          </div>
-          <div class="cv-item">
-            <span class="cv-date">Oct 2012-Sep 2014</span>
-            <p><strong>University of Munich</strong><br>M.Sc. in Epidemiology</p>
-          </div>
-          <div class="cv-item">
-            <span class="cv-date">Oct 2008-Aug 2012</span>
-            <p><strong>University of Applied Sciences Weihenstephan</strong><br>B.Sc. in Bioinformatics</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="cv-group">
-        <h3>Editorial Boards</h3>
-        <div class="cv-list">
-          <div class="cv-item">
-            <span class="cv-date">May 2026-Present</span>
-            <p><strong>Immunity, Inflammation and Disease - Wiley</strong><br>Editor</p>
-          </div>
-          <div class="cv-item">
-            <span class="cv-date">2024-Present</span>
-            <p><strong>Current Protocols in Bioinformatics - Wiley</strong><br>Editor</p>
-          </div>
-          <div class="cv-item">
-            <span class="cv-date">2022-2024</span>
-            <p><strong>Current Protocols in Bioinformatics - Wiley</strong><br>Associate Editor</p>
-          </div>
-        </div>
-      </div>
-
-    </section>
-
-    <div class="legal-grid">
-      <section class="contact-section" aria-labelledby="contact-heading">
-        <h2 id="contact-heading">Contact</h2>
-        <p>
-          For collaborations, research questions, or speaking requests, email
-          <a href="mailto:muench@hsph.harvard.edu">muench@hsph.harvard.edu</a>
-          or
-          <a href="mailto:philipp.muench@helmholtz-hzi.de">philipp.muench@helmholtz-hzi.de</a>.
-        </p>
-        <p>
-          <a href="/certs/">S/MIME certificate and SHA-256 fingerprint</a>
-        </p>
-      </section>
-
-      <section id="impressum" class="imprint" aria-labelledby="imprint-heading">
-        <h2 id="imprint-heading">Impressum</h2>
-        <p>Angaben gemäß § 5 DDG</p>
-        <address>
-          Dr. Philipp Münch - AI Software &amp; SaaS<br>
-          Inhaber: Dr. Philipp Münch<br>
-          c/o COCENTER<br>
-          Koppoldstr. 1<br>
-          86551 Aichach<br>
-          Deutschland
-        </address>
-        <p>
-          E-Mail: <a href="mailto:mail@pmuench.com">mail@pmuench.com</a>
-        </p>
-        <p>
-          USt-IdNr. gemäß § 27a UStG: DE460209447
-        </p>
-      </section>
-    </div>
-
-    <footer>
-      <p>© 2026 Philipp C. Münch · <a href="#impressum">Impressum</a></p>
-    </footer>
-  </main>
-  <script>
-    (() => {
-      const browser = document.querySelector("[data-project-browser]");
-      if (!browser) return;
-
-      const modal = browser.querySelector("[data-project-modal]");
-      const buttons = Array.from(browser.querySelectorAll("[data-project-button]"));
-      const details = Array.from(browser.querySelectorAll("[data-project-detail]"));
-      const closeButton = browser.querySelector("[data-project-close]");
-      if (!modal || !closeButton) return;
-
-      const clearSelection = () => {
-        details.forEach((detail) => {
-          detail.hidden = true;
-        });
-      };
-
-      const closeModal = () => {
-        if (typeof modal.close === "function" && modal.open) {
-          modal.close();
-          return;
-        }
-
-        modal.removeAttribute("open");
-        clearSelection();
-      };
-
-      buttons.forEach((button) => {
-        button.addEventListener("click", () => {
-          const target = button.dataset.projectButton;
-          const detail = browser.querySelector(`[data-project-detail="${target}"]`);
-
-          clearSelection();
-          if (!detail) return;
-
-          detail.hidden = false;
-
-          if (typeof modal.showModal === "function") {
-            modal.showModal();
-          } else {
-            modal.setAttribute("open", "");
-          }
-        });
-      });
-
-      closeButton.addEventListener("click", closeModal);
-      modal.addEventListener("close", clearSelection);
-      modal.addEventListener("click", (event) => {
-        if (event.target === modal) {
-          closeModal();
-        }
-      });
-    })();
-  </script>
+<script>
+(function(){
+  var b=document.getElementById('copy'), a=document.getElementById('addr');
+  b.addEventListener('click',function(){
+    function sel(){ var r=document.createRange(); r.selectNodeContents(a); var s=getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent='selected'; }
+    try{ navigator.clipboard.writeText(a.textContent).then(function(){ b.textContent='copied'; },sel); }catch(e){ sel(); }
+    setTimeout(function(){ b.textContent='copy'; },1800);
+  });
+  var p=document.querySelector('.play');
+  p.addEventListener('click',function(e){
+    if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey) return;
+    e.preventDefault();
+    var f=document.createElement('iframe');
+    f.className='yt'; f.title='halfsun by Loose Leash';
+    f.src='https://www.youtube-nocookie.com/embed/AvLviFXrZVs?autoplay=1&rel=0';
+    f.allow='autoplay; encrypted-media; picture-in-picture'; f.allowFullscreen=true;
+    p.replaceWith(f);
+  });
+})();
+</script>
 </body>
 </html>
